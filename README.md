@@ -4,10 +4,11 @@ A basic machine learning practice project using scikit-learn and PyTorch.
 
 ## What This Project Does
 
-This project contains two simple examples:
+This project contains three simple examples:
 
 1. PyTorch Tensor operations
 2. Linear Regression using the scikit-learn Diabetes dataset
+3. Wine dataset preparation and train/test splitting
 
 ## PyTorch Tensor Demo
 
@@ -64,6 +65,7 @@ The model's predictions differ from the actual values by about 42.79 target-valu
 
 - Python 3
 - scikit-learn
+- pandas
 - PyTorch
 
 ## Installation
