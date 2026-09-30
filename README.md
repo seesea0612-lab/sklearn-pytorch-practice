@@ -93,3 +93,110 @@ py ml_basics_demo.py
 ```text
 ml_basics_demo.py
 ```
+## Wine Dataset Preparation
+
+This project also includes a small data preparation exercise using the Wine dataset provided by scikit-learn.
+
+### Dataset
+
+The dataset is loaded using:
+
+```python
+from sklearn.datasets import load_wine
+
+wine = load_wine(as_frame=True)
+```
+
+The original dataset contains:
+
+- 178 samples
+- 13 input features
+- 1 target column
+- 14 columns in total
+
+The raw dataset is saved to:
+
+```text
+data/raw/wine_raw.csv
+```
+
+### Data Quality Check
+
+The dataset was checked for:
+
+- Missing values
+- Duplicate rows
+- Data types
+
+Results:
+
+- Missing values: 0
+- Duplicate rows: 0
+- Feature data types: 13 `float64` columns
+- Target data type: 1 `int64` column
+
+No additional data cleaning was required.
+
+The full data check report is available at:
+
+```text
+reports/wine_data_check.txt
+```
+
+### Train/Test Split
+
+The dataset was split using scikit-learn's `train_test_split` with:
+
+```python
+test_size=0.20
+random_state=42
+stratify=y
+```
+
+Result:
+
+- Training samples: 142
+- Test samples: 36
+- Training ratio: 79.78%
+- Test ratio: 20.22%
+
+`stratify=y` was used to preserve the class distribution between the training and test sets.
+
+### Preprocessing
+
+`StandardScaler` was used for feature standardization.
+
+To avoid data leakage, the scaler was fitted only on the training set:
+
+```python
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+```
+
+The test set was therefore transformed using only the statistics learned from the training set.
+
+### Generated Files
+
+```text
+data/
+├── raw/
+│   └── wine_raw.csv
+└── processed/
+    ├── wine_train.csv
+    └── wine_test.csv
+
+reports/
+└── wine_data_check.txt
+```
+
+The complete preparation script is:
+
+```text
+wine_data_preparation.py
+```
+
+Run it with:
+
+```bash
+py wine_data_preparation.py
+```

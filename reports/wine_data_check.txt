@@ -1,0 +1,45 @@
+Wine Dataset Data Check Report
+================================
+
+Dataset:
+Wine dataset from scikit-learn
+
+Original dataset shape:
+178 rows, 14 columns
+
+Features:
+13
+
+Target:
+target
+
+Missing values:
+0
+
+Duplicate rows:
+0
+
+Data types:
+float64    13
+int64       1
+
+Cleaning result:
+No missing values or duplicate rows were found.
+All column data types are appropriate.
+No additional cleaning operation was required.
+
+Train/Test Split:
+Training samples: 142
+Test samples: 36
+Training ratio: 79.78%
+Test ratio: 20.22%
+random_state: 42
+stratify: target
+
+Preprocessing:
+StandardScaler was used for feature standardization.
+
+Important:
+The scaler was fitted ONLY on the training set.
+The test set was transformed using statistics learned
+from the training set to avoid data leakage.
