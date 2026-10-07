@@ -238,3 +238,64 @@ The model achieved an MAE of 42.79. This means that the predicted
 target values differ from the actual target values by about 43 units
 on average. Linear Regression provides a useful baseline, but some
 individual predictions still have relatively large errors.
+## PyTorch Tensor, Gradient and Autograd Practice
+
+File: `pytorch_autograd_basics.py`
+
+This exercise practices the basic PyTorch workflow including tensors, gradients,
+automatic differentiation, and a manual gradient descent update.
+
+### Dataset
+
+The exercise uses the built-in Diabetes dataset from scikit-learn.
+
+Dataset shape:
+
+- Samples: 442
+- Features: 10
+- Training samples: 353
+- Test samples: 89
+
+### Topics Practiced
+
+- PyTorch Tensor creation
+- Tensor shapes and data types
+- `requires_grad=True`
+- Forward pass
+- Mean Squared Error (MSE)
+- `loss.backward()`
+- Gradient calculation
+- Manual gradient descent
+- Gradient reset
+- Reproducibility with random seeds
+
+### Run
+
+```powershell
+py pytorch_autograd_basics.py
+```
+
+### Main Result
+
+The initial training loss was:
+
+```text
+29711.322265625
+```
+
+After one manual gradient descent update:
+
+```text
+28434.923828125
+```
+
+The loss decreased successfully, showing that the calculated gradients updated
+the model parameters in the correct direction.
+
+### Learning Question
+
+**Why do we need to clear gradients before the next backward pass?**
+
+PyTorch accumulates gradients by default. If the gradients are not cleared,
+the next `backward()` call adds the newly calculated gradients to the previous
+ones instead of replacing them.
