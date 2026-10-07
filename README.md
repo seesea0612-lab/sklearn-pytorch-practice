@@ -202,3 +202,39 @@ Run it with:
 ```bash
 py wine_data_preparation.py
 ```
+## Diabetes Linear Regression
+
+This example uses the built-in Diabetes dataset from scikit-learn to train
+and evaluate a Linear Regression model.
+
+### Tasks
+
+- Load the Diabetes dataset using `load_diabetes`
+- Split the dataset into training and test sets
+- Train a `LinearRegression` model
+- Evaluate the model using MAE and MSE
+- Compare predicted values with actual values
+
+### Run
+
+```powershell
+py diabetes_regression.py
+```
+
+### Results
+
+```text
+Dataset size: 442 samples
+Training samples: 353
+Test samples: 89
+
+MAE: 42.79
+MSE: 2900.19
+```
+
+### Conclusion
+
+The model achieved an MAE of 42.79. This means that the predicted
+target values differ from the actual target values by about 43 units
+on average. Linear Regression provides a useful baseline, but some
+individual predictions still have relatively large errors.
